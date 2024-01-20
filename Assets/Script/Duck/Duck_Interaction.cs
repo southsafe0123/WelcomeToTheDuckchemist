@@ -1,28 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
-public class Interaction_Base : MonoBehaviour
+public class Duck_Interaction : MonoBehaviour
 {
-    
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
 
-        }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
 
-        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
     }
 }

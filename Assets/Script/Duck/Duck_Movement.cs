@@ -6,6 +6,7 @@ using UnityEngine;
 public class Duck_Movement : MonoBehaviour
 {
     private Vector2 mousePos;
+    private bool move;
     public float speed;
     public Rigidbody2D rb;
     public enum State
@@ -23,6 +24,14 @@ public class Duck_Movement : MonoBehaviour
         CheckState();
     }
 
+    private void FixedUpdate()
+    {
+        if(move)
+        {
+            Move();
+        }
+    }
+
     void ClickPos()
     {
         if (Input.GetMouseButtonDown(0))
@@ -37,10 +46,11 @@ public class Duck_Movement : MonoBehaviour
     {
         switch (state)
         {
-            case State.moving: 
-                Move(); 
+            case State.moving:
+                move = true;
                 break;
-            case State.idle: 
+            case State.idle:
+                move = false;
                 break;
         }
     }
